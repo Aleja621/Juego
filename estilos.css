@@ -1,0 +1,30 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 30px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #00ffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #009999;
+}
+
+#resultado {
+  margin-top: 20px;
+}
+
+#vidas {
+  margin-top: 15px;
+  font-size: 20px;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fin del ciclo</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1 id="mensajeFinal"></h1>
+  <button onclick="location.href='seleccionar.html'">Volver a invocar</button>
+
+  <script>
+    const jugador = parseInt(localStorage.getItem("vidasJugador"));
+    const enemigo = parseInt(localStorage.getItem("vidasEnemigo"));
+    document.getElementById("mensajeFinal").textContent =
+      jugador > enemigo ? "🌌 ¡Has resistido el abismo!" : "💀 Has sido absorbido por la nada.";
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoca a tu ser</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h2>Elige tu avatar cósmico</h2>
+  <form id="form">
+    <label><input type="radio" name="personaje" value="Cthulhu"> Cthulhu</label><br>
+    <label><input type="radio" name="personaje" value="Nyarlathotep"> Nyarlathotep</label><br>
+    <label><input type="radio" name="personaje" value="Azathoth"> Azathoth</label><br>
+    <label><input type="radio" name="personaje" value="Protagonista Lovecraftiano™"> Protagonista Lovecraftiano™</label><br>
+  </form>
+  <p id="elegido">Nada ha sido invocado aún</p>
+  <button onclick="confirmar()">Siguiente</button>
+
+  <script>
+    let seleccionado = null;
+
+    const opciones = document.getElementsByName("personaje");
+    opciones.forEach(op => {
+      op.addEventListener("change", () => {
+        seleccionado = op.value;
+        document.getElementById("elegido").textContent = "Invocado: " + seleccionado;
+      });
+    });
+
+    function confirmar() {
+      if (!seleccionado) {
+        alert("Invoca a tu ser, mortal.");
+        return;
+      }
+      localStorage.setItem("personaje", seleccionado);
+      localStorage.setItem("vidasJugador", "3");
+      localStorage.setItem("vidasEnemigo", "3");
+      window.location.href = "combate.html";
+    }
+  </script>
+</body>
+</html>
